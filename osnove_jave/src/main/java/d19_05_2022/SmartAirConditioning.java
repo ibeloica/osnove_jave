@@ -22,31 +22,25 @@ public class SmartAirConditioning {
 //    U glavnom programu krairati objekat klase SmartAirConditioning i testirati sve metode.
 
     public String marka;
-    public int potrosnjaHladjenje;
-    public int potrosnjaGrejanje;
+    public double potrosnjaHladjenje;
+    public double potrosnjaGrejanje;
     public int izabranaTemp;
     public String modRada;
 
     public void stampa() {
-        System.out.println(marka + " - " + modRada + " - " + izabranaTemp);
+        System.out.println(this.marka + " - " + this.modRada + " - " + this.izabranaTemp);
     }
 
-    public int mesecnaPotrosnja(int potrosnjaHladjenje, int potrosnjaGrejanje) {
-        if (modRada.equals("hladi")) {
-            return 30 * 15 * potrosnjaHladjenje;
-        } else return 30 * 15 * potrosnjaGrejanje;
+    public double mesecnaPotrosnja() {
+        if (modRada.equals("greje")) {
+            return 30 * 15 * potrosnjaGrejanje;
+        } else return 30 * 15 * potrosnjaHladjenje;
     }
 
-    public double cenaKoriscenja() {
-        for (int i = 0; i <= 350; i++) {
-            return mesecnaPotrosnja(potrosnjaHladjenje, potrosnjaGrejanje) * 6;
-        }
-
-        for (int j = 0; j > 350; j++) {
-            return mesecnaPotrosnja(potrosnjaHladjenje, potrosnjaGrejanje) * 9;
-
-        }
-        return 0;
+    public double cenaKoriscenja() {if (this.mesecnaPotrosnja() <= 350) {
+        return this.mesecnaPotrosnja() * 6;
+    }
+        return 350 * 6 + (this.mesecnaPotrosnja() - 350) * 9;
 
     }
 
