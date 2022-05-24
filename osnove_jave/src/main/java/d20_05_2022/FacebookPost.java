@@ -31,6 +31,15 @@ public class FacebookPost {
 //    Ovo je tekst objave
 //    Likes 3 | Shares 1
 
+
+    public FacebookPost(String posiljaoc, String primaoc, String tekst, int brojLajkova, int brojDeljenja) {
+        this.posiljaoc = posiljaoc;
+        this.primaoc = primaoc;
+        this.tekst = tekst;
+        this.brojLajkova = brojLajkova;
+        this.brojDeljenja = brojDeljenja;
+    }
+
     public String posiljaoc;
     public String primaoc;
     public String tekst;

@@ -21,7 +21,8 @@ public class Knjiga {
     private int godinaIzdanja;
     private Autor autor;
 
-    public Knjiga(){}
+    public Knjiga() {
+    }
 
     public Knjiga(String ISBN, String naziv, int godinaIzdanja, Autor autor) {
         this.ISBN = ISBN;
@@ -61,7 +62,8 @@ public class Knjiga {
     public void setAutor(Autor autor) {
         this.autor = autor;
     }
-    public void print(){
+
+    public void print() {
         System.out.println("(" + ISBN + ")");
         System.out.println("(" + naziv + ") " + " (" + godinaIzdanja + ")");
         this.autor.stampaj();

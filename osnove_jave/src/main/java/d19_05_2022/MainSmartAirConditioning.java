@@ -14,7 +14,7 @@ public class MainSmartAirConditioning {
         klima1.mesecnaPotrosnja();
         klima1.cenaKoriscenja();
         klima1.stampa();
-        System.out.println("Mesecna potrosnja je: " + klima1.mesecnaPotrosnja()) ;
+        System.out.println("Mesecna potrosnja je: " + klima1.mesecnaPotrosnja());
         System.out.println("Mesecna cena koriscenja je: " + klima1.cenaKoriscenja());
     }
 }

@@ -12,7 +12,8 @@ public class Autor {
     private String ime;
     private String prezime;
 
-    public Autor(){}
+    public Autor() {
+    }
 
     public Autor(String ime, String prezime) {
         this.ime = ime;
@@ -35,7 +36,7 @@ public class Autor {
         this.prezime = prezime;
     }
 
-    public void stampaj(){
+    public void stampaj() {
         System.out.println("(" + ime + ")" + " (" + prezime + ")");
     }
 }
