@@ -29,19 +29,17 @@ public class Transakcija {
 //    Naravno u glavnom kreirati objekte i testirati funkcionalnosti
 
     private int idTransakcije;
-    private String racunPosiljaoca;
-    private String racunPrimaoca;
+    private Racun racunPosiljaoca;
+    private Racun racunPrimaoca;
+
 
     public Transakcija() {
     }
 
-    public Transakcija(int idTransakcije, String racunPosiljaoca, String racunPrimaoca) {
+    public Transakcija(int idTransakcije) {
         this.idTransakcije = idTransakcije;
-        this.racunPosiljaoca = racunPosiljaoca;
-        this.racunPrimaoca = racunPrimaoca;
-    }
 
-    Racun racun = new Racun();
+    }
 
     public int getIdTransakcije() {
         return idTransakcije;
@@ -51,21 +49,45 @@ public class Transakcija {
         this.idTransakcije = idTransakcije;
     }
 
-    public String getRacunPosiljaoca() {
+    public Racun getRacunPosiljaoca() {
         return racunPosiljaoca;
     }
 
-    public void setRacunPosiljaoca(String racunPosiljaoca) {
+    public void setRacunPosiljaoca(Racun racunPosiljaoca) {
         this.racunPosiljaoca = racunPosiljaoca;
     }
 
-    public String getRacunPrimaoca() {
+    public Racun getRacunPrimaoca() {
         return racunPrimaoca;
     }
 
-    public void setRacunPrimaoca(String racunPrimaoca) {
+    public void setRacunPrimaoca(Racun racunPrimaoca) {
         this.racunPrimaoca = racunPrimaoca;
     }
 
+    private double provizija(double transakcija) {
+        if (transakcija < 4500) {
+            return 45;
+        }
+        return transakcija / 100;
+    }
 
+    public void izvrsiTransakciju(double transakcija) {
+        if (this.racunPrimaoca.getTrenutnoStanje() > (transakcija + provizija(transakcija))) {
+            this.racunPosiljaoca.promenaStanja(-transakcija - this.provizija(transakcija));
+            this.racunPrimaoca.promenaStanja(transakcija);
+        }
+    }
+
+
+    public void stampaj() {
+        System.out.println("ID transakcije je: " + this.idTransakcije);
+        System.out.println("Racun sa: " + racunPosiljaoca.getVlasnikRacuna() + " - "
+                + racunPosiljaoca.getBrojRacuna());
+        System.out.println("Racun na: " + racunPrimaoca.getVlasnikRacuna() + " - "
+                + racunPrimaoca.getBrojRacuna());
+    }
 }
+
+
+

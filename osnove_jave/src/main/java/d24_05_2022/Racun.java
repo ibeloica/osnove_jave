@@ -18,19 +18,19 @@ public class Racun {
 
     private String brojRacuna;
     private String vlasnikRacuna;
-    private int trenutnoStanje;
-
-    public String getBrojRacuna() {
-        return brojRacuna;
-    }
+    private double trenutnoStanje;
 
     public Racun() {
     }
 
-    public Racun(String brojRacuna, String vlasnikRacuna, int trenutnoStanje) {
+    public Racun(String brojRacuna, String vlasnikRacuna, double trenutnoStanje) {
         this.brojRacuna = brojRacuna;
         this.vlasnikRacuna = vlasnikRacuna;
         this.trenutnoStanje = trenutnoStanje;
+    }
+
+    public String getBrojRacuna() {
+        return brojRacuna;
     }
 
     public void setBrojRacuna(String brojRacuna) {
@@ -45,10 +45,20 @@ public class Racun {
         this.vlasnikRacuna = vlasnikRacuna;
     }
 
-    public int getTrenutnoStanje() {
-        return trenutnoStanje;
+    public double getTrenutnoStanje() {
+        return this.trenutnoStanje;
     }
 
-    public void promenaStanja() {
+    public void promenaStanja(double transakcija) {
+        if (this.trenutnoStanje + transakcija > 0) {
+            this.trenutnoStanje = this.trenutnoStanje + transakcija;
+        } else this.trenutnoStanje = this.trenutnoStanje;
     }
+
+
+    public void stampaj() {
+        System.out.println(this.vlasnikRacuna + " - " + this.brojRacuna);
+        System.out.println("Stanje na racunu je " + this.trenutnoStanje);
+    }
+
 }
