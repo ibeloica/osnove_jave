@@ -3,7 +3,7 @@ package p24_05_2022;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MainSastojak {
+public class  MainSastojak {
     public static void main(String[] args) {
 
 

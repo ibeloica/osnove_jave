@@ -22,24 +22,26 @@ public class Pasta {
     public void dodajSastojak(Sastojak sastojak) {
         this.sastojci.add(sastojak);
     }
+    public void obrisiSastojak(Sastojak sastojak) {this.sastojci.remove(sastojak);}
 
     public Pasta() {
     }
 
-    public void cenaPaste() {
+    public int cenaPaste() {
         int suma = 0;
         for (int i = 0; i < sastojci.size(); i++) {
             suma = suma + sastojci.get(i).getCena();
 
-        }
+        }return suma;
     }
     public void stampaj(){
         System.out.println("Pasta je sa sastojcima: ");
         for (int i = 0; i < sastojci.size(); i++) {
             System.out.println(sastojci.get(i).getNaziv() + " - " + sastojci.get(i).getCena());
-            System.out.println("Cena paste je s");
 
-        }
+
+
+        }System.out.println("Cena paste je " + cenaPaste());
 
     }
 }
