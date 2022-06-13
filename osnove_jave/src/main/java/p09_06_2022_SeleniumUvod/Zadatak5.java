@@ -1,4 +1,4 @@
-package d09_06_2022_SeleniumUvod;
+package p09_06_2022_SeleniumUvod;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

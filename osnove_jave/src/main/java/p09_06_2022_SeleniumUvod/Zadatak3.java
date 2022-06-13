@@ -1,4 +1,4 @@
-package d09_06_2022_SeleniumUvod;
+package p09_06_2022_SeleniumUvod;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,7 +17,9 @@ public class Zadatak3 {
 //        https://youtube.com/
 //        https://www.ebay.com/
 //        https://www.kupujemprodajem.com/
-//        Program petljom prolazi kroz niz stranica i svaku stranicu ucitava preko get ili navigate i od svake stranice na ekranu ispisuje naslov stranice. Kako od stranice procitati naslov imate na ovom linku
+//        Program petljom prolazi kroz niz stranica i svaku stranicu ucitava preko get
+//        ili navigate i od svake stranice na ekranu ispisuje naslov stranice.
+//        Kako od stranice procitati naslov imate na ovom linku
 //        U prevodu u konzoli treba da se ispisu:
 //        Google
 //                YouTube
